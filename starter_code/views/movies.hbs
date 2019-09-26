@@ -1,0 +1,17 @@
+<!--movies.hbs-->
+<div class="moviesTitle">
+<h2>Ironhack Cinema</h2>
+<p class="moviesLine">Click on the movie to check showtimes!</h3>
+</div>
+
+<div id="moviesRow">
+{{#each movies}}
+    <div id="moviesDiv">
+        <img class="moviePoster" src="{{image}}" alt="">
+        <h3>{{title}}</h3>
+        <a href="/movies/movie?movieId={{this._id}}">See More</a>
+        {{!-- For Params --}}
+        {{!-- <a href="/movies/{{this._id}}">See More</a> --}}
+    </div>
+{{/each}}
+</div>

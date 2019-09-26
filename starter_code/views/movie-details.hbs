@@ -1,0 +1,26 @@
+<!--movie-details-->
+
+<div id="movieDetailsRow">
+    <img src="{{movies.image}}" alt="">
+    <div id="movieDetailsColumn">
+        <a href="/movies">Go Back</a>
+        <h1>{{movies.title}}</h1>
+        <h2>Director: {{movies.director}}</h2>
+        <ul>
+            <li class="listTitle">Stars</li>
+            <li>{{movies.stars.[0]}}</li>
+            <li>{{movies.stars.[1]}}</li>
+            <li>{{movies.stars.[2]}}</li>
+        </ul>
+
+        <p>{{movies.description}}</p>
+        <ul class="showtimes">
+            <li>{{movies.showtimes.[0]}} |</li>
+            <li>{{movies.showtimes.[1]}} |</li>
+            <li>{{movies.showtimes.[2]}} |</li>
+            <li>{{movies.showtimes.[3]}} |</li>
+            <li>{{movies.showtimes.[4]}} |</li>
+        </ul>
+        <a href="/movies/delete?movieId={{movies._id}}">Boring movie, delete!</a>
+    </div>
+</div>

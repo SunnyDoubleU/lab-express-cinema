@@ -1,0 +1,177 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+.backgroundImage {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("/images/cinema.jpg");
+  background-size: cover;
+  /* background-color: black !important; */
+}
+
+.mainTitle {
+  position: absolute;
+  font-size: 7rem;
+  max-width: 20%;
+  left: 55%;
+  text-align: left;
+  color: white;
+}
+
+.indexButton {
+  border-radius: 50px;
+  background-color: white;
+  position: absolute;
+  left: 55%;
+  top: 50%;
+  font-size: 2rem;
+  padding: 2vh 2vw;
+}
+
+.btn {
+  text-decoration: none;
+  color: #77A5B2;
+}
+
+/* movies */
+.moviesLine {
+font-weight: lighter;
+font-size: 1rem;
+}
+
+.moviesTitle {
+  margin: 0 0 0 5vw;
+}
+#moviesDiv {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  align-items: center;
+  margin: 0 0 4vh 0;
+}
+
+#moviesRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 5vh 0 0 0 ;
+}
+
+.moviePoster {
+  width: 15vw;
+  height: auto;
+}
+
+#movieDetailsRow {
+  display: flex;
+  flex-direction: row;
+  margin: 5vh 0 0 5vw;
+}
+
+#movieDetailsColumn{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  margin-left: 2vw;
+}
+
+.listTitle {
+  list-style: none;
+  font-weight: bold;
+  margin-bottom: 2vh;
+}
+
+#movieDetailsColumn ul {
+padding-left: 0;
+}
+
+#movieDetailsColumn li {
+  list-style-position: inside;
+}
+
+#movieDetailsColumn p{
+  max-width: 70%
+}
+
+#movieDetailsRow img {
+width: 20vw;
+height: auto;
+}
+
+.showtimes {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: flex-start;
+}
+
+.showtimes li {
+  margin: 0 0.5vw 0 0;
+
+}
+
+/* creat form */
+.formColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 5vh 0 0 0;
+}
+
+.formRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50vw;
+}
+
+.starsInput, .showsInput{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 5vh;
+  width: 50vw;
+  font-size: 1rem;
+  margin: 0 0 3vh 0;
+  border-radius: 10px;
+}
+
+.stars, .shows {
+  height: 5vh;
+  width: 23%;
+  font-size: 1rem;
+  margin: 0 0 3vh 0;
+  border-radius: 10px;
+}
+
+
+.form1 {
+  height: 5vh;
+  width: 50vw;
+  font-size: 1rem;
+  margin: 0 0 3vh 0;
+  border-radius: 10px;
+}
+
+
+
+#formSubmit {
+  height: 5vh;
+  width: 50vw;
+  font-size: 1rem;
+  margin: 0 0 3vh 0;
+  border-radius: 10px;
+  background-color: #3C2960;
+  color: white;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */
