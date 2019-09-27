@@ -1,4 +1,3 @@
-import { startSession } from "mongoose";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -6,10 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }, false);
 
+let formSubmit = document.getElementById("formSubmit")
 
-
-// document.getElementById("formSubmit").addEventListener("click", function(){
-//   let starsInput = document.getElementById("starsInput").value
-//   let starsArray = starsInput.split(",")
-//   return starsArray;
-// });
+formSubmit.addEventListener("click", function(){
+  let starsInput = document.getElementById("starsInput1").value
+  let starsArray = starsInput.split(",")
+  debugger
+  console.log(starsArray)
+  return starsArray;
+});

@@ -1,6 +1,7 @@
 var express = require("express")
 var app = express()
 var movies = require("../models/movie")
+var script = require("../public/javascripts/script")
 
 app.get('/movies', (req, res) => {
     movies.find({})
@@ -23,7 +24,8 @@ app.post("/movies/create", (req, res)=> {
          director: req.body.director,
          description: req.body.description,
          image: req.body.image,
-         stars: [req.body.star1, req.body.star2, req.body.star3, req.body.star4],
+        //  stars: [req.body.star1, req.body.star2, req.body.star3, req.body.star4],
+         stars: script.starsArray,
          showtimes: [req.body.show1, req.body.show2, req.body.show3, req.body.show4, req.body.show5]
      })
 
