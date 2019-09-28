@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }, false);
 
-let formSubmit = document.getElementById("formSubmit")
+// let formSubmit = document.getElementById("formSubmit")
 
-formSubmit.addEventListener("click", function(){
-  let starsInput = document.getElementById("starsInput1").value
-  let starsArray = starsInput.split(",")
-  debugger
-  console.log(starsArray)
-  return starsArray;
-});
+// formSubmit.addEventListener("click", function(){
+//   let starsInput = document.getElementById("starsInput1").value
+//   let starsArray = starsInput.split(",")
+//   debugger
+//   console.log(starsArray)
+//   return starsArray;
+// });

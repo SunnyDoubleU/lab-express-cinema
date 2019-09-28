@@ -1,0 +1,15 @@
+<!--movies-update.hbs-->
+
+<form class="formColumn" action="/movies/update" method="POST">
+<h2>Update Your Movie</h2>
+  <input type="text" name="title"  class="form1" value="{{movie.title}}">
+  {{!-- <select name="directorId" class="form1">
+    {{#each movie.director}}
+      <option value="{{_id}}">{{name}}</option>
+    {{/each}}
+  </select> --}}
+  <input type="text" name="description"  class="form1" value="{{movie.description}}">
+  <input hidden type+"text" name="id" value="{{movie._id}}">
+  <button id="formSubmit" type="submit">Update Movie</button>
+</form>
+

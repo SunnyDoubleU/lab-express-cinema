@@ -5,11 +5,12 @@
 </div>
 
 <div id="moviesRow">
-{{#each movies}}
+{{#each movie}}
     <div id="moviesDiv">
         <img class="moviePoster" src="{{image}}" alt="">
         <h3>{{title}}</h3>
         <a href="/movies/movie?movieId={{this._id}}">See More</a>
+        <p>Director: {{director.name}}</p>
         {{!-- For Params --}}
         {{!-- <a href="/movies/{{this._id}}">See More</a> --}}
     </div>

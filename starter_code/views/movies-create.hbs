@@ -3,23 +3,16 @@
 <form class="formColumn" action="/movies/create" method="POST">
 <h2>Create Your Movie</h2>
   <input type="text" name="title" placeholder="Movie Title" class="form1">
-  <input type="text" name="director" placeholder="Director" class="form1">
+  <select name="directorId" id="directorId" class="form1">
+    {{#each director}}
+      <option value="{{_id}}">{{name}}</option>
+    {{/each}}
+  </select>
+  {{!-- <input type="text" name="director" placeholder="Director" class="form1"> --}}
   <input type="text" name="description" placeholder="Description" class="form1">
-  <input type="text" name="stars" placeholder="Input movie stars. seperate with comma without space." id="starsInput1">
-  {{!-- <div class="starsInput">
-    <input type="text" name="star1" placeholder="star1" class="stars">
-    <input type="text" name="star2" placeholder="star2" class="stars">
-    <input type="text" name="star3" placeholder="star3" class="stars">
-    <input type="text" name="star4" placeholder="star4" class="stars">
-  </div> --}}
+  <input type="text" name="stars" placeholder="Input movie stars. Seperate with comma without space." id="starsInput1" required>
   <input type="text" name="image" placeholder="Movie Poster URL" class="form1">
-  <div class="showsInput">
-    <input type="text" name="show1" placeholder="show1" class="shows">
-    <input type="text" name="show2" placeholder="show2" class="shows">
-    <input type="text" name="show3" placeholder="show3" class="shows">
-    <input type="text" name="show4" placeholder="show4" class="shows">
-    <input type="text" name="show5" placeholder="show4" class="shows">
-  </div>
+  <input type="text" name="shows" placeholder="Input show time. Seperate with comma without space." id="starsInput1" required>
   <button id="formSubmit" type="submit"> Create New Movie</button>
 </form>
 

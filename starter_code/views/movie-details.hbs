@@ -1,26 +1,25 @@
 <!--movie-details-->
 
 <div id="movieDetailsRow">
-    <img src="{{movies.image}}" alt="">
+    <img src="{{movie.image}}" alt="">
     <div id="movieDetailsColumn">
-        <a href="/movies">Go Back</a>
-        <h1>{{movies.title}}</h1>
-        <h2>Director: {{movies.director}}</h2>
+        <a href="/movie">Go Back</a>
+        <h1>{{movie.title}}</h1>
+        <h2>Director: {{movie.director.name}}</h2>
         <ul>
             <li class="listTitle">Stars</li>
-            <li>{{movies.stars.[0]}}</li>
-            <li>{{movies.stars.[1]}}</li>
-            <li>{{movies.stars.[2]}}</li>
+            {{#each movie.stars}}
+            <li>{{this}}</li>
+            {{/each}}
         </ul>
 
-        <p>{{movies.description}}</p>
+        <p>{{movie.description}}</p>
         <ul class="showtimes">
-            <li>{{movies.showtimes.[0]}} |</li>
-            <li>{{movies.showtimes.[1]}} |</li>
-            <li>{{movies.showtimes.[2]}} |</li>
-            <li>{{movies.showtimes.[3]}} |</li>
-            <li>{{movies.showtimes.[4]}} |</li>
+            {{#each movie.showtimes}}
+            <li>{{this}} |</li>
+            {{/each}}
         </ul>
-        <a href="/movies/delete?movieId={{movies._id}}">Boring movie, delete!</a>
+        <a href="/movies/delete?movieId={{movie._id}}">Boring movie, delete!</a>
+        <a href="/movies/update?movieId={{movie._id}}">Update</a>
     </div>
 </div>
