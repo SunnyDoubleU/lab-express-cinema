@@ -6,19 +6,22 @@ var mongoose = require("mongoose");
 // var script = require("../public/javascripts/script")
 
 app.get("/movies", (req, res) => {
-  Movie.find({})
-    .populate("director")
-    .then((movie) => {
-      debugger;
-      res.render("movies", { movie });
-    })
-    .catch((err) => {
-      res.send(err);
-    });
+  if (req.session.currentUser) {
+    Movie.find({})
+      .populate("director")
+      .then(movie => {
+        res.render("movies", { movie, user: req.session.currentUser });
+      })
+      .catch(err => {
+        res.send(err);
+      });
+  } else {
+    res.render("auth/login");
+  }
 });
 
 app.get("/movies/create", (req, res) => {
-  Director.find({}).then((director) => {
+  Director.find({}).then(director => {
     res.render("movies-create", { director });
   });
 });
@@ -36,10 +39,10 @@ app.post("/movies/create", (req, res) => {
     showtimes: showsArray
   })
 
-    .then((movie) => {
+    .then(movie => {
       res.redirect(`/movies/movie?movieId=${movie.id}`);
     })
-    .catch((err) => {
+    .catch(err => {
       res.send(err);
     });
   //   to do: get post Data
@@ -61,25 +64,22 @@ app.get("/movies/movie", (req, res) => {
 
 app.get("/movies/delete", (req, res, next) => {
   Movie.findByIdAndDelete(req.query.movieId)
-    .then((movie) => {
-      res.redirect("/movies");
-    })
-    .catch((err) => {
-      res.send(err);
-    });
-}), 
-
-
-app.get("/movies/update", (req, res, next) => {
-  Movie.findById(req.query.movieId)
     .then(movie => {
-      res.render("movies-update", { movie });
+      res.redirect("/movies");
     })
     .catch(err => {
       res.send(err);
     });
-});
-
+}),
+  app.get("/movies/update", (req, res, next) => {
+    Movie.findById(req.query.movieId)
+      .then(movie => {
+        res.render("movies-update", { movie });
+      })
+      .catch(err => {
+        res.send(err);
+      });
+  });
 
 app.post("/movies/update", (req, res) => {
   Movie.findByIdAndUpdate(req.body.id, {

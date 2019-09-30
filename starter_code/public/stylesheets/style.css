@@ -1,10 +1,46 @@
-  
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 
 a {
-  color: #00B7FF; }
+  color: #00b7ff;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  top: 0;
+}
 
+.alignRow,
+.alignRow2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav a {
+  text-decoration: none;
+  color: grey;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.alignRow {
+  width: 20%;
+}
+
+.alignRow2 {
+  width: 10%;
+  padding: 0 2vw 0 0;
+}
+.homepage {
+  width: 5vw;
+}
 .backgroundImage {
   height: 100vh;
   width: 100vw;
@@ -34,13 +70,13 @@ a {
 
 .btn {
   text-decoration: none;
-  color: #77A5B2;
+  color: #77a5b2;
 }
 
 /* movies */
 .moviesLine {
-font-weight: lighter;
-font-size: 1rem;
+  font-weight: lighter;
+  font-size: 1rem;
 }
 
 .moviesTitle {
@@ -59,7 +95,7 @@ font-size: 1rem;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 5vh 0 0 0 ;
+  margin: 5vh 0 0 0;
 }
 
 .moviePoster {
@@ -73,7 +109,7 @@ font-size: 1rem;
   margin: 5vh 0 0 5vw;
 }
 
-#movieDetailsColumn{
+#movieDetailsColumn {
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -88,20 +124,20 @@ font-size: 1rem;
 }
 
 #movieDetailsColumn ul {
-padding-left: 0;
+  padding-left: 0;
 }
 
 #movieDetailsColumn li {
   list-style-position: inside;
 }
 
-#movieDetailsColumn p{
-  max-width: 70%
+#movieDetailsColumn p {
+  max-width: 70%;
 }
 
 #movieDetailsRow img {
-width: 20vw;
-height: auto;
+  width: 20vw;
+  height: auto;
 }
 
 .showtimes {
@@ -113,7 +149,6 @@ height: auto;
 
 .showtimes li {
   margin: 0 0.5vw 0 0;
-
 }
 
 /* creat form */
@@ -134,9 +169,9 @@ height: auto;
   width: 50vw;
 }
 
-
-
-.starsInput, .showsInput, #starsInput1 {
+.starsInput,
+.showsInput,
+#starsInput1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -147,14 +182,14 @@ height: auto;
   border-radius: 10px;
 }
 
-.stars, .shows {
+.stars,
+.shows {
   height: 5vh;
   width: 23%;
   font-size: 1rem;
   margin: 0 0 3vh 0;
   border-radius: 10px;
 }
-
 
 .form1 {
   height: 5vh;
@@ -164,15 +199,15 @@ height: auto;
   border-radius: 10px;
 }
 
-
-
-#formSubmit {
+#formSubmit,
+#signUpSubmit,
+#logInSubmit {
   height: 5vh;
   width: 50vw;
   font-size: 1rem;
   margin: 0 0 3vh 0;
   border-radius: 10px;
-  background-color: #3C2960;
+  background-color: #3c2960;
   color: white;
   font-weight: bold;
 }

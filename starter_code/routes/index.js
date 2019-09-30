@@ -1,15 +1,15 @@
-const express = require('express')
-const router  = express.Router()
+var express = require("express");
+var app = express();
 // var movies = require("../models/movie")
 // var app = express()
 
-
 /* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
+app.get(`/`, (req, res, next) => {
+  console.log(req.session);
+  res.render(`index`);
 });
 
-//Params
+// Params
 // router.get('/movies/:movieId', (req, res, next) => {
 //   movies.findById(req.params.movieId)
 //     .then(theMovie => {
@@ -23,5 +23,4 @@ router.get('/', (req, res, next) => {
 
 //query
 
-module.exports = router;
-
+module.exports = app;
