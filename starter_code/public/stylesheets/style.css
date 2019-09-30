@@ -14,6 +14,7 @@ nav {
   background-color: white;
   width: 100%;
   top: 0;
+  left: 0;
 }
 
 .alignRow,
@@ -46,6 +47,7 @@ nav a {
   width: 100vw;
   background-image: url("/images/cinema.jpg");
   background-size: cover;
+  left: 0;
   /* background-color: black !important; */
 }
 
@@ -53,6 +55,7 @@ nav a {
   position: absolute;
   font-size: 7rem;
   max-width: 20%;
+  top: 15%;
   left: 55%;
   text-align: left;
   color: white;
@@ -63,7 +66,7 @@ nav a {
   background-color: white;
   position: absolute;
   left: 55%;
-  top: 50%;
+  top: 60%;
   font-size: 2rem;
   padding: 2vh 2vw;
 }
