@@ -3,6 +3,8 @@ var app = express();
 var Movie = require("../models/movie");
 var Director = require("../models/director");
 var mongoose = require("mongoose");
+var multer = require("multer");
+var upload = multer({ dest: `${__dirname}/../uploads/` });
 // var script = require("../public/javascripts/script")
 
 app.get("/movies", (req, res) => {
@@ -26,15 +28,17 @@ app.get("/movies/create", (req, res) => {
   });
 });
 
-app.post("/movies/create", (req, res) => {
+app.post("/movies/create", upload.single("moviePoster"), (req, res) => {
   let starsArray = req.body.stars.split(",");
   let showsArray = req.body.shows.split(",");
 
+  // console.log(req.file);
+  // res.redirect("/movies/create");
   Movie.create({
     title: req.body.title,
     director: mongoose.Types.ObjectId(req.body.directorId),
     description: req.body.description,
-    image: req.body.image,
+    image: req.file.filename,
     stars: starsArray,
     showtimes: showsArray
   })
@@ -45,9 +49,9 @@ app.post("/movies/create", (req, res) => {
     .catch(err => {
       res.send(err);
     });
-  //   to do: get post Data
-  //   to do: create new beer using beer module
-  //   to do: redirect user
+  // to do: get post Data
+  // to do: create new beer using beer module
+  // to do: redirect user
 });
 
 app.get("/movies/movie", (req, res) => {

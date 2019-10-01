@@ -1,18 +1,20 @@
 <!--movies-create.hbs-->
 
-<form class="formColumn" action="/movies/create" method="POST">
-<h2>Create Your Movie</h2>
+<form class="formColumn" action="/movies/create" method="POST" enctype="multipart/form-data">
+  <h2>Create Your Movie</h2>
   <input type="text" name="title" placeholder="Movie Title" class="form1">
   <select name="directorId" id="directorId" class="form1">
     {{#each director}}
-      <option value="{{_id}}">{{name}}</option>
+    <option value="{{_id}}">{{name}}</option>
     {{/each}}
   </select>
   {{!-- <input type="text" name="director" placeholder="Director" class="form1"> --}}
   <input type="text" name="description" placeholder="Description" class="form1">
-  <input type="text" name="stars" placeholder="Input movie stars. Seperate with comma without space." id="starsInput1" required>
-  <input type="text" name="image" placeholder="Movie Poster URL" class="form1">
-  <input type="text" name="shows" placeholder="Input show time. Seperate with comma without space." id="starsInput1" required>
+  <input type="text" name="stars" placeholder="Input movie stars. Seperate with comma without space." id="starsInput1"
+    required>
+  {{!-- <input type="text" name="image" placeholder="Movie Poster URL" class="form1"> --}}
+  <input type="text" name="shows" placeholder="Input show time. Seperate with comma without space." id="starsInput1"
+    required>
+  <input type="file" name="moviePoster">
   <button id="formSubmit" type="submit"> Create New Movie</button>
 </form>
-
