@@ -12,7 +12,7 @@ app.get("/movies", (req, res) => {
     Movie.find({})
       .populate("director")
       .then(movie => {
-        res.render("movies", { movie, user: req.session.currentUser });
+        res.render("movies", { movie });
       })
       .catch(err => {
         res.send(err);
@@ -58,7 +58,6 @@ app.get("/movies/movie", (req, res) => {
   Movie.findById(req.query.movieId)
     .populate("director")
     .then(movie => {
-      debugger;
       res.render("movie-details", { movie });
     })
     .catch(err => {
@@ -77,18 +76,27 @@ app.get("/movies/delete", (req, res, next) => {
 }),
   app.get("/movies/update", (req, res, next) => {
     Movie.findById(req.query.movieId)
+      // let starString = req.query.star.join()
       .then(movie => {
-        res.render("movies-update", { movie });
+        Director.find({}).then(director => {
+          res.render("movies-update", { movie, director });
+        });
       })
       .catch(err => {
         res.send(err);
       });
   });
 
-app.post("/movies/update", (req, res) => {
+app.post("/movies/update", upload.single("moviePoster"), (req, res) => {
+  let starsArray = req.body.stars.split(",");
+  let showsArray = req.body.shows.split(",");
   Movie.findByIdAndUpdate(req.body.id, {
     title: req.body.title,
-    description: req.body.description
+    description: req.body.description,
+    director: mongoose.Types.ObjectId(req.body.directorId),
+    image: req.file.filename,
+    stars: starsArray,
+    showtimes: showsArray
   })
     .then(movie => {
       res.redirect(`/movies/movie?movieId=${movie.id}`);

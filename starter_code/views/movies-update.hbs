@@ -1,15 +1,18 @@
 <!--movies-update.hbs-->
 
-<form class="formColumn" action="/movies/update" method="POST">
-<h2>Update Your Movie</h2>
-  <input type="text" name="title"  class="form1" value="{{movie.title}}">
-  {{!-- <select name="directorId" class="form1">
-    {{#each movie.director}}
-      <option value="{{_id}}">{{name}}</option>
+<form class="formColumn" action="/movies/update" method="POST" enctype="multipart/form-data">
+  <h2>Update Your Movie</h2>
+  <input type="text" name="title" class="form1" value="{{movie.title}}" required>
+  <select name="directorId" class="form1" required>
+    {{#each director}}
+    <option value="{{_id}}">{{name}}</option>
     {{/each}}
-  </select> --}}
-  <input type="text" name="description"  class="form1" value="{{movie.description}}">
+  </select>
+  <input type="text" name="description" class="form1" value="{{movie.description}}" required>
+  <input type="text" name="stars" value="{{movie.stars}}" id="starsInput1" required>
+  <label class="form1">Upload movie poster:</label>
+  <input type="file" name="moviePoster" class="form1">
+  <input type="text" name="shows" value="{{movie.showtimes}}" id="starsInput1" required>
   <input hidden type+"text" name="id" value="{{movie._id}}">
   <button id="formSubmit" type="submit">Update Movie</button>
 </form>
-
