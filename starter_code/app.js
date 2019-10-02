@@ -64,12 +64,21 @@ app.use(express.static("uploads"));
 app.locals.title = "Cinema Ironhack";
 
 var indexRoute = require("./routes/index");
-app.use("/", indexRoute);
-
 var moviesRoute = require("./routes/movies");
-app.use("/", moviesRoute);
-
 var authRoute = require("./routes/auth");
+
+app.use("/movies", (req, res, next) => {
+  if (!req.session.currentUser) res.render("auth/login");
+  else next();
+});
+
+app.use("/", (req, res, next) => {
+  if (req.session.currentUser) res.locals.user = req.session.currentUser;
+  next();
+});
+
+app.use("/", indexRoute);
+app.use("/", moviesRoute);
 app.use("/", authRoute);
 
 // module.exports = app;

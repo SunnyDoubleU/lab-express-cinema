@@ -69,7 +69,7 @@ app.post("/login", (req, res, next) => {
         });
         return;
       }
-      if (bcrypt.compareSync(thePassword, user.password)) {
+      if (bcrypt.compare(thePassword, user.password)) {
         req.session.currentUser = user;
         res.redirect("/movies");
       } else {
